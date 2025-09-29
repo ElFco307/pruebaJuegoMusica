@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego: Adivina la Canción</title>
+    <link rel="stylesheet" href="css/juego.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+    <!-- Cartel tipo concurso -->
+    <header class="cartel">
+        <h1><span class="estrella">⭐</span> Adivina la Canción <span class="estrella">⭐</span></h1>
+    </header>
+
+    <!-- Botón para iniciar -->
+    <button id="iniciarBtn">▶ Iniciar juego</button>
+
+    <!-- Contador regresivo -->
+    <div id="contador">3</div>
+
+    <!-- Contenedor del juego (se oculta al inicio) -->
+    <div id="juego" style="display: none;">
+        <p id="progreso">Canción 1/5</p>
+        <p id="pregunta">¿Cómo se llama esta canción?</p>
+        <p><strong id="artistaActual">Artista</strong></p>
+
+        <audio id="audio" controls></audio>
+        
+        <!-- Barra de tiempo -->
+        <div id="barraTiempo">
+            <div id="progresoTiempo"></div>
+        </div>
+
+        <form id="formulario">
+            <div id="opciones"></div>
+            <br>
+            <button type="submit">Responder</button>
+        </form>
+    </div>
+
+    <!-- Modal personalizado para mensajes -->
+    <div id="modalMensaje" class="modal">
+        <div class="modal-contenido">
+            <p id="textoModal"></p>
+            <button id="cerrarModal">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Modal de puntaje final -->
+    <div id="modalFinal" class="modal">
+        <div class="modal-contenido">
+            <p id="textoFinal"></p>
+            <button id="cerrarFinal">Volver a jugar</button>
+        </div>
+    </div>
+
+    <!-- Modal de tiempo agotado -->
+<div id="modalTiempo" class="modal">
+    <div class="modal-contenido">
+        <p id="textoTiempo">⏰ ¡Se te acabó el tiempo!</p>
+        <button id="cerrarTiempo">Continuar</button>
+    </div>
+</div>
+
+    <script src="js/juego.js"></script>
+</body>
+</html>
