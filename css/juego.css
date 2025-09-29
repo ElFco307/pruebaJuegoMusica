@@ -1,0 +1,254 @@
+/* Fondo general tipo rayo de concurso */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #64c8ff 0%, #003c8f 100%);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Cartel tipo concurso */
+.cartel {
+    background-color: #ff2e2e;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ffae00, 0 0 40px #ff2e2e;
+    margin-bottom: 2rem;
+    border: 5px solid white;
+}
+
+.cartel h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px #000;
+    margin: 0;
+}
+
+.cartel .estrella {
+    color: #ffd700;
+    font-size: 1.5em;
+}
+
+/* Progreso */
+#progreso {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+/* Pregunta */
+#pregunta {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#artistaActual {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor del juego */
+#juego {
+    background-color: #1e2561;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Reproductor con diseño */
+audio {
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto 2rem;
+    display: block;
+    background-color: #00000040;
+    border-radius: 10px;
+    accent-color: #00e392;
+}
+
+/* Opciones estilo botón */
+#opciones label {
+    display: block;
+    background-color: #3843b3;
+    margin: 0.5rem auto;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 80%;
+    border: 2px solid transparent;
+}
+
+#opciones label:hover {
+    background-color: #4b57e6;
+    border-color: #00e392;
+}
+
+/* Botones */
+button[type="submit"],
+#iniciarBtn {
+    background-color: #ff6600;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+button[type="submit"]:hover,
+#iniciarBtn:hover {
+    background-color: #ff8533;
+}
+
+/* Transición fade-in */
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Transición fade-out */
+.fade-out {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Slide desde abajo */
+.slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo del contador */
+#contador {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00e392;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+/* Estilo base para todos los modales */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    color: #111;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.modal.show .modal-contenido {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#textoModal, #textoFinal, #textoTiempo {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón común para ambos modales */
+#cerrarModal,
+#cerrarFinal,
+#cerrarTiempo {
+    background-color: #00c276;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#cerrarModal:hover,
+#cerrarFinal:hover
+#cerrarTiempo:hover {
+    background-color: #009a5a;
+    transform: scale(1.05);
+}
+
+#barraTiempo {
+    width: 100%;
+    max-width: 500px;
+    height: 10px;
+    background-color: #ffffff40;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 1rem auto;
+}
+
+#progresoTiempo {
+    height: 100%;
+    width: 0%;
+    background-color: #00e392;
+    transition: width 0.1s linear;
+}
+
+#artistaActual {
+    display: none;
+}
